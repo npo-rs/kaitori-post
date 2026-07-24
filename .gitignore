@@ -1,5 +1,6 @@
-# 実データはコミットしない
+# 実データ・実際のお客様の個人情報はコミットしない
 data/products.csv
+output/reply/live/
 
 # 生成物（必要ならコメントアウトして管理）
 output/research/*.md
