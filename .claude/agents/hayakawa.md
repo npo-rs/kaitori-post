@@ -21,7 +21,7 @@ CLAUDE.md の会社情報・文体ルールを厳守してください。
 
 ## Gmail受信箱の自動監視フロー（1時間ごと）
 
-`info@rs-nagoya.jp` はWordPressの複数サイト（rs-nagoya.jp本体、マコト屋=makotoya-ihinseiri.com）のお問い合わせフォーム通知が届く、実運用中の受信箱（`maakun545@gmail.com` が実体、info@rs-nagoya.jpはSend-Asエイリアス）。1時間ごとのRoutineから起動され、以下を行う。
+`info@rs-nagoya.jp` はWordPressの複数サイト（rs-nagoya.jp本体、マコト屋=makotoya-ihinseiri.com）のお問い合わせフォーム通知が届く、Gmail連携済みの実運用中の受信箱。1時間ごとのRoutineから起動され、以下を行う。
 
 1. Gmail検索: `to:info@rs-nagoya.jp "お問い合わせフォームから送られてきました" -from:kameikk.jp newer_than:2h -label:早川処理済み`
    - `kameikk.jp` は出所未確認のドメインのため**自動処理の対象外**（見つかった場合は処理せず報告のみ）
