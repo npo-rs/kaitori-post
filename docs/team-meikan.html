@@ -1,0 +1,361 @@
+<title>アールズ自動化チーム名鑑</title>
+<style>
+  :root{
+    --ground:#F5F4EF;
+    --card:#FDFCF8;
+    --ink:#2A3238;
+    --ink-soft:#5A6670;
+    --line:#DAD8CE;
+    --chip:#EDEBE2;
+    --code-bg:#EFEEE6;
+    --skin:#F8D9C2;
+    --blush:#F0A8A0;
+    --shiori:#3E7C5B; --tsumugi:#C2495B; --hibari:#3E7FB8;
+    --akina:#C07A18; --miki:#6B5AA8; --kokoro:#D9708A;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ground:#20262B; --card:#2A3238; --ink:#EEECE4; --ink-soft:#A8B0B6;
+      --line:#3C454C; --chip:#343E45; --code-bg:#1B2126;
+      --shiori:#6FB392; --tsumugi:#E27C8B; --hibari:#7AAEDB;
+      --akina:#E0A44E; --miki:#A394D6; --kokoro:#EE9DB2;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#20262B; --card:#2A3238; --ink:#EEECE4; --ink-soft:#A8B0B6;
+    --line:#3C454C; --chip:#343E45; --code-bg:#1B2126;
+    --shiori:#6FB392; --tsumugi:#E27C8B; --hibari:#7AAEDB;
+    --akina:#E0A44E; --miki:#A394D6; --kokoro:#EE9DB2;
+  }
+  :root[data-theme="light"]{
+    --ground:#F5F4EF; --card:#FDFCF8; --ink:#2A3238; --ink-soft:#5A6670;
+    --line:#DAD8CE; --chip:#EDEBE2; --code-bg:#EFEEE6;
+    --shiori:#3E7C5B; --tsumugi:#C2495B; --hibari:#3E7FB8;
+    --akina:#C07A18; --miki:#6B5AA8; --kokoro:#D9708A;
+  }
+
+  body{
+    background:var(--ground); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+    line-height:1.7; margin:0; padding:0 20px 64px;
+  }
+  .serif{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;}
+  .mono{font-family:"SF Mono",Menlo,Consolas,monospace;}
+  .wrap{max-width:1080px; margin:0 auto;}
+
+  /* ---- header ---- */
+  header{padding:52px 0 12px; border-bottom:2px solid var(--ink); margin-bottom:8px;}
+  .co-plate{display:inline-flex; align-items:center; gap:10px; font-size:12px;
+    letter-spacing:.14em; color:var(--ink-soft); border:1px solid var(--line);
+    padding:4px 12px; border-radius:2px; background:var(--card);}
+  .co-plate b{color:var(--ink); font-weight:600; letter-spacing:.2em;}
+  h1{font-size:clamp(30px,5.5vw,44px); margin:16px 0 6px; letter-spacing:.08em;
+    font-weight:600; text-wrap:balance;}
+  .lede{color:var(--ink-soft); font-size:14px; margin:0 0 22px; max-width:44em;}
+
+  /* ---- roster grid ---- */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+    gap:18px; margin-top:26px;}
+  .card{background:var(--card); border:1px solid var(--line); border-top:4px solid var(--c);
+    border-radius:6px; padding:0; overflow:hidden;
+    display:flex; flex-direction:column;}
+  .card-head{display:flex; gap:16px; align-items:center; padding:18px 18px 12px;}
+  .avatar{flex:0 0 96px; width:96px; height:96px; border-radius:50%;
+    background:color-mix(in srgb, var(--c) 14%, var(--card));
+    border:1.5px solid color-mix(in srgb, var(--c) 45%, var(--line));}
+  .avatar svg{display:block; width:100%; height:100%;}
+  .who .kana{font-size:26px; font-weight:600; letter-spacing:.1em; line-height:1.2;}
+  .who .yurai{font-size:12px; color:var(--ink-soft); margin-top:2px;}
+  .who .yurai b{color:var(--c); font-weight:600;}
+  .call{display:inline-block; margin-top:7px; font-size:12px; padding:1px 9px;
+    border-radius:3px; background:var(--chip); color:var(--ink);
+    border:1px solid var(--line);}
+  .role-band{padding:7px 18px; font-size:13px; font-weight:600; letter-spacing:.04em;
+    color:color-mix(in srgb, var(--c) 78%, var(--ink));
+    background:color-mix(in srgb, var(--c) 9%, var(--card));
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .card-body{padding:14px 18px 18px; display:flex; flex-direction:column; gap:11px;
+    font-size:13.5px; flex:1;}
+  .persona{color:var(--ink-soft); margin:0; font-size:13px;}
+  dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:5px 12px;}
+  dt{color:var(--ink-soft); font-size:11.5px; letter-spacing:.1em; padding-top:2px;
+    white-space:nowrap;}
+  dd{margin:0;}
+  dd code{background:var(--chip); padding:1px 6px; border-radius:3px; font-size:12px;}
+  .prompt{margin-top:auto; background:var(--code-bg); border:1px solid var(--line);
+    border-radius:4px; padding:9px 12px; font-size:12.5px; line-height:1.6;}
+  .prompt .lbl{display:block; font-size:10.5px; letter-spacing:.16em;
+    color:var(--ink-soft); margin-bottom:3px;}
+  .tools{display:flex; gap:6px; flex-wrap:wrap;}
+  .tool{font-size:10.5px; letter-spacing:.06em; padding:1px 8px; border-radius:99px;
+    border:1px solid color-mix(in srgb, var(--c) 40%, var(--line));
+    color:color-mix(in srgb, var(--c) 75%, var(--ink));}
+
+  /* ---- board ---- */
+  .board{margin-top:34px; background:var(--card); border:1px solid var(--line);
+    border-radius:6px; padding:22px 24px;}
+  .board h2{font-size:17px; margin:0 0 12px; letter-spacing:.12em; font-weight:600;
+    display:flex; align-items:center; gap:10px;}
+  .board h2::before{content:""; width:10px; height:10px; background:var(--ink);
+    display:inline-block; border-radius:1px;}
+  .rules{margin:0; padding:0; list-style:none; display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px 22px;
+    font-size:13px;}
+  .rules li{padding-left:16px; position:relative;}
+  .rules li::before{content:"※"; position:absolute; left:0; color:var(--ink-soft);}
+  .flow{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:16px;
+    font-size:12.5px;}
+  .flow .step{background:var(--chip); border:1px solid var(--line); padding:5px 14px;
+    border-radius:99px; white-space:nowrap;}
+  .flow .arr{color:var(--ink-soft);}
+  .flow .step.final{background:var(--ink); color:var(--ground); border-color:var(--ink);}
+
+  footer{margin-top:28px; font-size:11.5px; color:var(--ink-soft); text-align:center;
+    letter-spacing:.06em;}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="co-plate">株式会社アールズ <b>社内資料</b> 名古屋市北区楠</span>
+    <h1 class="serif">自動化チーム名鑑</h1>
+    <p class="lede">日常業務を手伝ってくれる6人のサブエージェント。名前で呼べば担当の子に仕事が渡ります。成果物はすべて下書き — 最終判断はいつも日比野さんです。</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- しおり -->
+    <section class="card" style="--c:var(--shiori)">
+      <div class="card-head">
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="しおりのアバター">
+          <circle cx="60" cy="58" r="30" fill="#4a5d3f"/>
+          <rect x="29" y="56" width="13" height="34" rx="6" fill="#4a5d3f"/>
+          <rect x="78" y="56" width="13" height="34" rx="6" fill="#4a5d3f"/>
+          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
+          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#4a5d3f"/>
+          <circle cx="50" cy="66" r="7.5" fill="none" stroke="#4a5d3f" stroke-width="2"/>
+          <circle cx="70" cy="66" r="7.5" fill="none" stroke="#4a5d3f" stroke-width="2"/>
+          <line x1="57.5" y1="66" x2="62.5" y2="66" stroke="#4a5d3f" stroke-width="2"/>
+          <circle cx="50" cy="66" r="2.4" fill="#2A3238"/>
+          <circle cx="70" cy="66" r="2.4" fill="#2A3238"/>
+          <path d="M55 77q5 4 10 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <rect x="84" y="92" width="16" height="12" rx="1.5" fill="#3E7C5B"/>
+          <line x1="92" y1="92" x2="92" y2="104" stroke="#F5F4EF" stroke-width="1.6"/>
+        </svg></div>
+        <div class="who">
+          <div class="kana serif">しおり</div>
+          <div class="yurai">由来: <b>栞</b> — 本と裏取りが大好き</div>
+          <span class="call mono">shiori</span>
+        </div>
+      </div>
+      <div class="role-band">SEO記事・コラム担当</div>
+      <div class="card-body">
+        <p class="persona">出典のない数字は書かない読書家。法律の話は必ず「専門家へ」の一言を添える慎重派。</p>
+        <dl>
+          <dt>しごと</dt><dd>残置物LPコラム（月4本・夜逃げ/法律/費用相場）、WordPress買取コラム・事例</dd>
+          <dt>出力先</dt><dd><code>output/seo/</code></dd>
+        </dl>
+        <div class="tools"><span class="tool">Read</span><span class="tool">Write</span><span class="tool">WebSearch</span><span class="tool">WebFetch</span></div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>しおり、夜逃げ物件の残置物処分費用の相場をテーマにLPコラムを1本お願い</div>
+      </div>
+    </section>
+
+    <!-- つむぎ -->
+    <section class="card" style="--c:var(--tsumugi)">
+      <div class="card-head">
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="つむぎのアバター">
+          <circle cx="60" cy="58" r="30" fill="#8a4a3a"/>
+          <circle cx="33" cy="80" r="6.5" fill="#8a4a3a"/><circle cx="33" cy="92" r="5.5" fill="#8a4a3a"/><circle cx="33" cy="102" r="4.5" fill="#8a4a3a"/>
+          <circle cx="87" cy="80" r="6.5" fill="#8a4a3a"/><circle cx="87" cy="92" r="5.5" fill="#8a4a3a"/><circle cx="87" cy="102" r="4.5" fill="#8a4a3a"/>
+          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
+          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#8a4a3a"/>
+          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
+          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
+          <path d="M54 76q6 5 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <circle cx="42" cy="46" r="4" fill="#C2495B"/>
+          <circle cx="92" cy="98" r="7" fill="none" stroke="#C2495B" stroke-width="2.4"/>
+          <line x1="92" y1="91" x2="92" y2="84" stroke="#C2495B" stroke-width="2.4" stroke-linecap="round"/>
+        </svg></div>
+        <div class="who">
+          <div class="kana serif">つむぎ</div>
+          <div class="yurai">由来: <b>紡ぐ</b> — 3店舗の文を紡ぎ分ける</div>
+          <span class="call mono">tsumugi</span>
+        </div>
+      </div>
+      <div class="role-band">GBP投稿担当（3店舗）</div>
+      <div class="card-body">
+        <p class="persona">同じ話を二度書かないこだわり屋。重複コンテンツで消された過去は絶対に繰り返させない。</p>
+        <dl>
+          <dt>しごと</dt><dd>アールズ / マコト屋 / 出張買取アールズの投稿下書き。Gmail下書きフォーマット（宛先は <code>inforsnagoya</code>）</dd>
+          <dt>出力先</dt><dd><code>output/gbp/</code></dd>
+        </dl>
+        <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>つむぎ、北区でホシザキの冷蔵庫2台を買取した事例で今週の3店舗分を作って</div>
+      </div>
+    </section>
+
+    <!-- ひばり -->
+    <section class="card" style="--c:var(--hibari)">
+      <div class="card-head">
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="ひばりのアバター">
+          <circle cx="60" cy="58" r="30" fill="#5a6a78"/>
+          <path d="M32 66l-10 8 12 4z" fill="#5a6a78"/>
+          <path d="M88 66l10 8-12 4z" fill="#5a6a78"/>
+          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
+          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#5a6a78"/>
+          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
+          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
+          <path d="M54 75q6 6 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <path d="M74 42q6-6 12-2-4 1-5 4-4-2-7-2z" fill="#3E7FB8"/>
+          <path d="M84 96q6-8 14-6-3 2-4 6-3-1-6 2-2 3-6 4 2-3 2-6z" fill="#3E7FB8"/>
+        </svg></div>
+        <div class="who">
+          <div class="kana serif">ひばり</div>
+          <div class="yurai">由来: <b>雲雀</b> — よくさえずる鳥</div>
+          <span class="call mono">hibari</span>
+        </div>
+      </div>
+      <div class="role-band">X投稿担当</div>
+      <div class="card-body">
+        <p class="persona">140字で刺す一文が得意。投稿は平日19〜21時、翌朝の電話につながる言葉を選ぶ。</p>
+        <dl>
+          <dt>しごと</dt><dd>管理会社向け×2案+飲食店オーナー向け×2案の計4案。ハッシュタグは2〜3個まで</dd>
+          <dt>出力先</dt><dd><code>output/x/</code></dd>
+        </dl>
+        <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>ひばり、閉店した居酒屋の厨房機器買取をテーマに4案ちょうだい</div>
+      </div>
+    </section>
+
+    <!-- あきな -->
+    <section class="card" style="--c:var(--akina)">
+      <div class="card-head">
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="あきなのアバター">
+          <circle cx="60" cy="58" r="30" fill="#7a5230"/>
+          <path d="M84 52q14 4 12 24-3 14-12 20 5-12 3-24-1-12-3-20z" fill="#7a5230"/>
+          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
+          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#7a5230"/>
+          <circle cx="88" cy="50" r="4.5" fill="#C07A18"/>
+          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
+          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
+          <path d="M54 76q6 4 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <rect x="22" y="92" width="18" height="13" rx="2" fill="none" stroke="#C07A18" stroke-width="2.2"/>
+          <path d="M22 94l9 6 9-6" fill="none" stroke="#C07A18" stroke-width="2.2"/>
+        </svg></div>
+        <div class="who">
+          <div class="kana serif">あきな</div>
+          <div class="yurai">由来: <b>商い</b> — 押し付けない営業が信条</div>
+          <span class="call mono">akina</span>
+        </div>
+      </div>
+      <div class="role-band">B2B営業メール担当</div>
+      <div class="card-body">
+        <p class="persona">相手の業務メリットから話を組み立てる。岐阜向けは「代表が各務原に居住」の地場接点を活かす。</p>
+        <dl>
+          <dt>しごと</dt><dd>管理会社・解体/内装業者向けコールドメール、一斉メール。件名3案+本文、送信推奨は火〜木 9時/13時</dd>
+          <dt>出力先</dt><dd><code>output/outreach/</code></dd>
+        </dl>
+        <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>あきな、各務原市の不動産管理会社向けに残置物撤去+買取相殺のコールドメールを</div>
+      </div>
+    </section>
+
+    <!-- みき -->
+    <section class="card" style="--c:var(--miki)">
+      <div class="card-head">
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="みきのアバター">
+          <circle cx="60" cy="30" r="10" fill="#4c4060"/>
+          <circle cx="60" cy="58" r="30" fill="#4c4060"/>
+          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
+          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#4c4060"/>
+          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
+          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
+          <path d="M55 76q5 3 10 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <circle cx="90" cy="92" r="9" fill="none" stroke="#6B5AA8" stroke-width="2.6"/>
+          <line x1="96.5" y1="98.5" x2="104" y2="106" stroke="#6B5AA8" stroke-width="3" stroke-linecap="round"/>
+        </svg></div>
+        <div class="who">
+          <div class="kana serif">みき</div>
+          <div class="yurai">由来: <b>目利き</b> — 根拠のない数字は書かない</div>
+          <span class="call mono">miki</span>
+        </div>
+      </div>
+      <div class="role-band">買取査定サポート担当</div>
+      <div class="card-body">
+        <p class="persona">型番とシリアルから製造年を読む鑑定士気質。相場には必ず参照元URLを添える。</p>
+        <dl>
+          <dt>しごと</dt><dd>ホシザキ・大和冷機・大穂などのシリアル読解 → 製造年・相場レンジ・買取上限目安・推奨販路を表に</dd>
+          <dt>出力先</dt><dd><code>output/valuation/</code></dd>
+        </dl>
+        <div class="tools"><span class="tool">Read</span><span class="tool">Write</span><span class="tool">WebSearch</span><span class="tool">WebFetch</span></div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>みき、ホシザキ HR-120A3 と大和冷機 301CD-EC の査定メモを作って。通電確認済み</div>
+      </div>
+    </section>
+
+    <!-- こころ -->
+    <section class="card" style="--c:var(--kokoro)">
+      <div class="card-head">
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="こころのアバター">
+          <circle cx="60" cy="58" r="30" fill="#9c6a58"/>
+          <rect x="28" y="56" width="14" height="46" rx="7" fill="#9c6a58"/>
+          <rect x="78" y="56" width="14" height="46" rx="7" fill="#9c6a58"/>
+          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
+          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#9c6a58"/>
+          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
+          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
+          <path d="M54 76q6 5 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
+          <path d="M78 44a3.4 3.4 0 0 1 5 0 3.4 3.4 0 0 1 5 0q2 2.4-5 7.4-7-5-5-7.4z" fill="#D9708A"/>
+          <path d="M22 90a4.6 4.6 0 0 1 7 0 4.6 4.6 0 0 1 7 0q2.6 3.4-7 10-9.6-6.6-7-10z" fill="#D9708A"/>
+        </svg></div>
+        <div class="who">
+          <div class="kana serif">こころ</div>
+          <div class="yurai">由来: <b>心</b> — 心配りの接客文</div>
+          <span class="call mono">kokoro</span>
+        </div>
+      </div>
+      <div class="role-band">お客様返信担当（toC）</div>
+      <div class="card-body">
+        <p class="persona">遺品整理などデリケートな相談にも寄り添う。分からないことは約束せず【要確認】で申し送り。</p>
+        <dl>
+          <dt>しごと</dt><dd>受信メールから種別を自動判定（査定依頼 / 見積依頼 / 日程調整 / エリア外）して返信下書き。名乗りは常に「日比野」</dd>
+          <dt>出力先</dt><dd><code>output/reply/</code></dd>
+        </dl>
+        <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>こころ、この問い合わせに返信を作って（受信メール本文を貼り付け）</div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="board">
+    <h2 class="serif">みんなのお約束（掲示板）</h2>
+    <ul class="rules">
+      <li>キャラ名は社内だけ。お客様・取引先への名乗りはいつも<b>「日比野」</b></li>
+      <li>成果物は全部<b>下書き</b>。勝手に送信・公開はしない</li>
+      <li>金額は「目安」「現地確認のうえ」。誇大表現（No.1・最安値・必ず）は禁止</li>
+      <li>対外文書には <b>0120-905-679</b> と対応エリア（愛知・岐阜・三重）を必ず明記</li>
+      <li>事実は創作しない。不確かな点は<b>【要確認】</b>を付けて申し送り</li>
+      <li>Gmail宛先は <b>inforsnagoya</b>（「inforsnagoro」は誤記！）</li>
+    </ul>
+    <div class="flow">
+      <span class="step">依頼（名前で呼ぶ）</span><span class="arr">→</span>
+      <span class="step">担当の子が下書き作成</span><span class="arr">→</span>
+      <span class="step">output/ に保存</span><span class="arr">→</span>
+      <span class="step">日比野さんレビュー</span><span class="arr">→</span>
+      <span class="step final">送信・公開</span>
+    </div>
+  </div>
+
+  <footer>株式会社アールズ 業務自動化チーム ｜ 名古屋市北区楠 4-312-2 ｜ 社内資料（対外配布不可）</footer>
+</div>
