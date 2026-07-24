@@ -1,0 +1,8 @@
+# 実データはコミットしない
+data/products.csv
+
+# 生成物（必要ならコメントアウトして管理）
+output/research/*.md
+output/blog/*.md
+output/sns/*.md
+output/review/*.md
