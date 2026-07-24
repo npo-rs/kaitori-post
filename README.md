@@ -1,47 +1,38 @@
-# kaitori-post
+# 株式会社アールズ 日常業務自動化環境
 
-買取商品の**記事・SNS投稿を自動生成する Claude Code エージェントチーム**。
+株式会社アールズ（名古屋市北区・厨房機器買取 / 不用品回収 / 遺品整理 / 残置物撤去 / ハウスクリーニング）の
+日常業務を **Claude Code のサブエージェント6体で半自動化**するプロジェクト。
 
-スプレッドシート/CSV の商品情報を入力に、リサーチ → 記事執筆 → SNS投稿 → 校正 までを
-役割分担したサブエージェントで回します。
+会社情報・共通ルール（文体・景表法・下書き前提の運用）は `CLAUDE.md` を参照。
+チームの顔ぶれは `docs/team-meikan.html`（チーム名鑑）で見られます。
 
-## エージェント
+## エージェント（名前＝担当）
 
-- **kaitori-researcher** … 相場・スペック・需要を調べてリサーチメモを作る
-- **kaitori-blog-writer** … SEOブログ記事（WordPress向け）を書く
-- **kaitori-sns-writer** … X / Instagram 用の投稿文を書く
-- **kaitori-editor** … 誤情報・誇大表現・法令(景表法/薬機法)・SEO をチェックして修正
+| 名前 | 呼び出し名 | しごと | 出力先 |
+| --- | --- | --- | --- |
+| 記事カケル | `kiji-kakeru` | 残置物LPコラム / WordPress買取コラム・事例 | `output/seo/` |
+| 投稿ワケル | `toukou-wakeru` | GBP投稿下書き（3店舗を書き分け） | `output/gbp/` |
+| ツブヤケル | `tsubuyakeru` | X投稿（2オーディエンス×2案） | `output/x/` |
+| アポトレル | `apo-toreru` | B2B営業メール（件名3案+本文） | `output/outreach/` |
+| サテイデキル | `satei-dekiru` | 型番→製造年・相場・販路の査定メモ | `output/valuation/` |
+| ヘンジカケル | `henji-kakeru` | toC問い合わせへの返信下書き（種別自動判定） | `output/reply/` |
 
 ## 使い方
 
-### 1. 商品情報を用意
-
-`data/sample_products.csv` をコピーして `data/products.csv` を作り、商品を記入します。
-
-### 2. Claude Code で回す
-
-1商品を仕上げる例（メインの対話で指示）：
+メインの対話で名前で呼ぶだけです：
 
 ```
-data/products.csv の1行目の商品について、
-kaitori-researcher → kaitori-blog-writer → kaitori-sns-writer → kaitori-editor
-の順でチームを回して。
+記事カケル、夜逃げ物件の残置物処分費用の相場でLPコラムを1本お願い
+サテイデキル、ホシザキ HRF-120AT の査定メモを作って
+ヘンジカケル、この問い合わせに返信を作って（受信メールを貼り付け）
 ```
 
-特定エージェントだけ呼ぶこともできます：
+名前を呼ばなくても、依頼内容から自動で担当に振り分けられます。
 
-```
-> use the kaitori-researcher subagent for the Rolex Submariner row
-```
+## 運用ルール（要点）
 
-### 3. 出力を確認
-
-- `output/research/` … リサーチメモ
-- `output/blog/` … ブログ記事（フロントマター付き。WordPressに貼れる）
-- `output/sns/` … SNS投稿案
-- `output/review/` … 校正レポート（公開可否の判定つき）
-
-## 注意
-
-- 価格は必ず「目安・変動する」前提で書かれます。実掲載前に相場を再確認してください。
-- 投稿(WordPress/SNSへの実送信)は現状スコープ外です。必要なら次段で連携を追加できます。
+- 成果物は**すべて下書き**。送信・公開は必ず日比野さんのレビュー後に手動で行う
+- 金額は「目安」「現地確認のうえ」。誇大表現は禁止（景品表示法）
+- 不確かな事実には `【要確認】` が付く。レビュー時に埋めるか削る
+- Gmail宛先は `inforsnagoya`（「inforsnagoro」は誤記）
+- GBPは3店舗で同一文の使い回し厳禁（過去に重複検出で削除歴あり）
