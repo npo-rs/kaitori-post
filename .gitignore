@@ -5,6 +5,10 @@ output/reply/live/
 # 実際の取引先情報・銀行口座等の機密運用情報（gitで管理しない）
 .claude/agents/private/
 
+# 実際の故人名・生年月日を含む証明書PDF・印鑑画像（gitで管理しない）
+output/certificates/
+stamp.png
+
 # 生成物（必要ならコメントアウトして管理）
 output/research/*.md
 output/blog/*.md
