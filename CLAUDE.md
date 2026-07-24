@@ -38,14 +38,16 @@
 
 ## エージェント構成
 
-| エージェント | 役割 | 出力先 |
-| --- | --- | --- |
-| `seo-writer` | 残置物LP向け静的HTMLコラム / WordPress向け買取コラム・買取事例 | `output/seo/` |
-| `gbp-drafter` | 3店舗のGBP投稿下書き（Gmail下書き保存用フォーマット） | `output/gbp/` |
-| `x-marketer` | 不動産管理会社・飲食店オーナー向けX投稿（2オーディエンス×2案） | `output/x/` |
-| `sales-outreach` | B2Bコールドメール・管理会社向け一斉メール文面 | `output/outreach/` |
-| `valuation-assistant` | 厨房機器・什器の型番→製造年・相場・販路の査定メモ | `output/valuation/` |
-| `customer-reply` | toC問い合わせメールへの返信文作成（種別自動判定） | `output/reply/` |
+エージェントには女の子の名前が付いている（社内での呼び名。**対外向け成果物にはキャラクター名を出さない**。対外的な担当名は常に「日比野」）。
+
+| 名前 | 由来 | 役割 | 出力先 |
+| --- | --- | --- | --- |
+| `shiori`（しおり） | 栞 | 残置物LP向け静的HTMLコラム / WordPress向け買取コラム・買取事例 | `output/seo/` |
+| `tsumugi`（つむぎ） | 紡ぐ | 3店舗のGBP投稿下書き（Gmail下書き保存用フォーマット） | `output/gbp/` |
+| `hibari`（ひばり） | 鳥 | 不動産管理会社・飲食店オーナー向けX投稿（2オーディエンス×2案） | `output/x/` |
+| `akina`（あきな） | 商い | B2Bコールドメール・管理会社向け一斉メール文面 | `output/outreach/` |
+| `miki`（みき） | 目利き | 厨房機器・什器の型番→製造年・相場・販路の査定メモ | `output/valuation/` |
+| `kokoro`（こころ） | 心 | toC問い合わせメールへの返信文作成（種別自動判定） | `output/reply/` |
 
 ## ディレクトリ
 
