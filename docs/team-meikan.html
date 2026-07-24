@@ -8,30 +8,28 @@
     --line:#DAD8CE;
     --chip:#EDEBE2;
     --code-bg:#EFEEE6;
-    --skin:#F8D9C2;
-    --blush:#F0A8A0;
-    --shiori:#3E7C5B; --tsumugi:#C2495B; --hibari:#3E7FB8;
-    --akina:#C07A18; --miki:#6B5AA8; --kokoro:#D9708A;
+    --kiji:#3E7C5B; --wakeru:#C2495B; --tsubu:#3E7FB8;
+    --apo:#C07A18; --satei:#6B5AA8; --henji:#D9708A;
   }
   @media (prefers-color-scheme: dark){
     :root{
       --ground:#20262B; --card:#2A3238; --ink:#EEECE4; --ink-soft:#A8B0B6;
       --line:#3C454C; --chip:#343E45; --code-bg:#1B2126;
-      --shiori:#6FB392; --tsumugi:#E27C8B; --hibari:#7AAEDB;
-      --akina:#E0A44E; --miki:#A394D6; --kokoro:#EE9DB2;
+      --kiji:#6FB392; --wakeru:#E27C8B; --tsubu:#7AAEDB;
+      --apo:#E0A44E; --satei:#A394D6; --henji:#EE9DB2;
     }
   }
   :root[data-theme="dark"]{
     --ground:#20262B; --card:#2A3238; --ink:#EEECE4; --ink-soft:#A8B0B6;
     --line:#3C454C; --chip:#343E45; --code-bg:#1B2126;
-    --shiori:#6FB392; --tsumugi:#E27C8B; --hibari:#7AAEDB;
-    --akina:#E0A44E; --miki:#A394D6; --kokoro:#EE9DB2;
+    --kiji:#6FB392; --wakeru:#E27C8B; --tsubu:#7AAEDB;
+    --apo:#E0A44E; --satei:#A394D6; --henji:#EE9DB2;
   }
   :root[data-theme="light"]{
     --ground:#F5F4EF; --card:#FDFCF8; --ink:#2A3238; --ink-soft:#5A6670;
     --line:#DAD8CE; --chip:#EDEBE2; --code-bg:#EFEEE6;
-    --shiori:#3E7C5B; --tsumugi:#C2495B; --hibari:#3E7FB8;
-    --akina:#C07A18; --miki:#6B5AA8; --kokoro:#D9708A;
+    --kiji:#3E7C5B; --wakeru:#C2495B; --tsubu:#3E7FB8;
+    --apo:#C07A18; --satei:#6B5AA8; --henji:#D9708A;
   }
 
   body{
@@ -60,13 +58,12 @@
     border-radius:6px; padding:0; overflow:hidden;
     display:flex; flex-direction:column;}
   .card-head{display:flex; gap:16px; align-items:center; padding:18px 18px 12px;}
-  .avatar{flex:0 0 96px; width:96px; height:96px; border-radius:50%;
-    background:color-mix(in srgb, var(--c) 14%, var(--card));
+  .avatar{flex:0 0 92px; width:92px; height:92px; border-radius:50%;
+    background:color-mix(in srgb, var(--c) 13%, var(--card));
     border:1.5px solid color-mix(in srgb, var(--c) 45%, var(--line));}
   .avatar svg{display:block; width:100%; height:100%;}
-  .who .kana{font-size:26px; font-weight:600; letter-spacing:.1em; line-height:1.2;}
-  .who .yurai{font-size:12px; color:var(--ink-soft); margin-top:2px;}
-  .who .yurai b{color:var(--c); font-weight:600;}
+  .who .kana{font-size:24px; font-weight:700; letter-spacing:.06em; line-height:1.25;}
+  .who .imi{font-size:12px; color:var(--ink-soft); margin-top:2px;}
   .call{display:inline-block; margin-top:7px; font-size:12px; padding:1px 9px;
     border-radius:3px; background:var(--chip); color:var(--ink);
     border:1px solid var(--line);}
@@ -118,71 +115,58 @@
   <header>
     <span class="co-plate">株式会社アールズ <b>社内資料</b> 名古屋市北区楠</span>
     <h1 class="serif">自動化チーム名鑑</h1>
-    <p class="lede">日常業務を手伝ってくれる6人のサブエージェント。名前で呼べば担当の子に仕事が渡ります。成果物はすべて下書き — 最終判断はいつも日比野さんです。</p>
+    <p class="lede">日常業務を手伝ってくれる6体のサブエージェント。名前がそのまま担当 — 名前で呼べばその仕事が始まります。成果物はすべて下書き、最終判断はいつも日比野さんです。</p>
   </header>
 
   <div class="grid">
 
-    <!-- しおり -->
-    <section class="card" style="--c:var(--shiori)">
+    <!-- 記事カケル -->
+    <section class="card" style="--c:var(--kiji)">
       <div class="card-head">
-        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="しおりのアバター">
-          <circle cx="60" cy="58" r="30" fill="#4a5d3f"/>
-          <rect x="29" y="56" width="13" height="34" rx="6" fill="#4a5d3f"/>
-          <rect x="78" y="56" width="13" height="34" rx="6" fill="#4a5d3f"/>
-          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
-          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#4a5d3f"/>
-          <circle cx="50" cy="66" r="7.5" fill="none" stroke="#4a5d3f" stroke-width="2"/>
-          <circle cx="70" cy="66" r="7.5" fill="none" stroke="#4a5d3f" stroke-width="2"/>
-          <line x1="57.5" y1="66" x2="62.5" y2="66" stroke="#4a5d3f" stroke-width="2"/>
-          <circle cx="50" cy="66" r="2.4" fill="#2A3238"/>
-          <circle cx="70" cy="66" r="2.4" fill="#2A3238"/>
-          <path d="M55 77q5 4 10 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <rect x="84" y="92" width="16" height="12" rx="1.5" fill="#3E7C5B"/>
-          <line x1="92" y1="92" x2="92" y2="104" stroke="#F5F4EF" stroke-width="1.6"/>
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="記事カケルのアイコン">
+          <rect x="34" y="26" width="46" height="62" rx="4" fill="var(--card)" stroke="var(--kiji)" stroke-width="3"/>
+          <line x1="43" y1="42" x2="71" y2="42" stroke="var(--kiji)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="43" y1="53" x2="71" y2="53" stroke="var(--kiji)" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+          <line x1="43" y1="64" x2="63" y2="64" stroke="var(--kiji)" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+          <path d="M66 92l24-24 8 8-24 24-10 2z" fill="var(--kiji)"/>
+          <path d="M90 68l8 8 4-4a5.6 5.6 0 0 0-8-8z" fill="var(--kiji)" opacity=".65"/>
         </svg></div>
         <div class="who">
-          <div class="kana serif">しおり</div>
-          <div class="yurai">由来: <b>栞</b> — 本と裏取りが大好き</div>
-          <span class="call mono">shiori</span>
+          <div class="kana">記事カケル</div>
+          <div class="imi">記事が書ける子</div>
+          <span class="call mono">kiji-kakeru</span>
         </div>
       </div>
       <div class="role-band">SEO記事・コラム担当</div>
       <div class="card-body">
-        <p class="persona">出典のない数字は書かない読書家。法律の話は必ず「専門家へ」の一言を添える慎重派。</p>
+        <p class="persona">出典のない数字は書かない裏取り主義。法律の話には必ず「専門家へ」の一言を添える。</p>
         <dl>
           <dt>しごと</dt><dd>残置物LPコラム（月4本・夜逃げ/法律/費用相場）、WordPress買取コラム・事例</dd>
           <dt>出力先</dt><dd><code>output/seo/</code></dd>
         </dl>
         <div class="tools"><span class="tool">Read</span><span class="tool">Write</span><span class="tool">WebSearch</span><span class="tool">WebFetch</span></div>
-        <div class="prompt"><span class="lbl">呼び出し例</span>しおり、夜逃げ物件の残置物処分費用の相場をテーマにLPコラムを1本お願い</div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>記事カケル、夜逃げ物件の残置物処分費用の相場をテーマにLPコラムを1本お願い</div>
       </div>
     </section>
 
-    <!-- つむぎ -->
-    <section class="card" style="--c:var(--tsumugi)">
+    <!-- 投稿ワケル -->
+    <section class="card" style="--c:var(--wakeru)">
       <div class="card-head">
-        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="つむぎのアバター">
-          <circle cx="60" cy="58" r="30" fill="#8a4a3a"/>
-          <circle cx="33" cy="80" r="6.5" fill="#8a4a3a"/><circle cx="33" cy="92" r="5.5" fill="#8a4a3a"/><circle cx="33" cy="102" r="4.5" fill="#8a4a3a"/>
-          <circle cx="87" cy="80" r="6.5" fill="#8a4a3a"/><circle cx="87" cy="92" r="5.5" fill="#8a4a3a"/><circle cx="87" cy="102" r="4.5" fill="#8a4a3a"/>
-          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
-          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#8a4a3a"/>
-          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
-          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
-          <path d="M54 76q6 5 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <circle cx="42" cy="46" r="4" fill="#C2495B"/>
-          <circle cx="92" cy="98" r="7" fill="none" stroke="#C2495B" stroke-width="2.4"/>
-          <line x1="92" y1="91" x2="92" y2="84" stroke="#C2495B" stroke-width="2.4" stroke-linecap="round"/>
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="投稿ワケルのアイコン">
+          <rect x="20" y="46" width="24" height="34" rx="3" fill="var(--card)" stroke="var(--wakeru)" stroke-width="3"/>
+          <path d="M18 46l4-10h20l4 10z" fill="var(--wakeru)"/>
+          <rect x="48" y="38" width="24" height="42" rx="3" fill="var(--card)" stroke="var(--wakeru)" stroke-width="3"/>
+          <path d="M46 38l4-10h20l4 10z" fill="var(--wakeru)"/>
+          <rect x="76" y="46" width="24" height="34" rx="3" fill="var(--card)" stroke="var(--wakeru)" stroke-width="3"/>
+          <path d="M74 46l4-10h20l4 10z" fill="var(--wakeru)"/>
+          <line x1="26" y1="92" x2="42" y2="92" stroke="var(--wakeru)" stroke-width="4" stroke-linecap="round"/>
+          <line x1="52" y1="92" x2="68" y2="92" stroke="var(--wakeru)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 6"/>
+          <line x1="78" y1="92" x2="94" y2="92" stroke="var(--wakeru)" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 5"/>
         </svg></div>
         <div class="who">
-          <div class="kana serif">つむぎ</div>
-          <div class="yurai">由来: <b>紡ぐ</b> — 3店舗の文を紡ぎ分ける</div>
-          <span class="call mono">tsumugi</span>
+          <div class="kana">投稿ワケル</div>
+          <div class="imi">3店舗の投稿を書き分ける子</div>
+          <span class="call mono">toukou-wakeru</span>
         </div>
       </div>
       <div class="role-band">GBP投稿担当（3店舗）</div>
@@ -193,31 +177,24 @@
           <dt>出力先</dt><dd><code>output/gbp/</code></dd>
         </dl>
         <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
-        <div class="prompt"><span class="lbl">呼び出し例</span>つむぎ、北区でホシザキの冷蔵庫2台を買取した事例で今週の3店舗分を作って</div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>投稿ワケル、北区でホシザキの冷蔵庫2台を買取した事例で今週の3店舗分を作って</div>
       </div>
     </section>
 
-    <!-- ひばり -->
-    <section class="card" style="--c:var(--hibari)">
+    <!-- ツブヤケル -->
+    <section class="card" style="--c:var(--tsubu)">
       <div class="card-head">
-        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="ひばりのアバター">
-          <circle cx="60" cy="58" r="30" fill="#5a6a78"/>
-          <path d="M32 66l-10 8 12 4z" fill="#5a6a78"/>
-          <path d="M88 66l10 8-12 4z" fill="#5a6a78"/>
-          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
-          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#5a6a78"/>
-          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
-          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
-          <path d="M54 75q6 6 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <path d="M74 42q6-6 12-2-4 1-5 4-4-2-7-2z" fill="#3E7FB8"/>
-          <path d="M84 96q6-8 14-6-3 2-4 6-3-1-6 2-2 3-6 4 2-3 2-6z" fill="#3E7FB8"/>
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="ツブヤケルのアイコン">
+          <path d="M28 36h56a6 6 0 0 1 6 6v30a6 6 0 0 1-6 6H52l-14 14v-14h-10a6 6 0 0 1-6-6V42a6 6 0 0 1 6-6z" fill="var(--card)" stroke="var(--tsubu)" stroke-width="3"/>
+          <circle cx="44" cy="57" r="3.4" fill="var(--tsubu)"/>
+          <circle cx="58" cy="57" r="3.4" fill="var(--tsubu)"/>
+          <circle cx="72" cy="57" r="3.4" fill="var(--tsubu)"/>
+          <path d="M84 20q10-6 16-2-4 1-6 5 6 0 8 3-6 1-9 5-1 6-7 9 2-5 0-9-4-6-2-11z" fill="var(--tsubu)"/>
         </svg></div>
         <div class="who">
-          <div class="kana serif">ひばり</div>
-          <div class="yurai">由来: <b>雲雀</b> — よくさえずる鳥</div>
-          <span class="call mono">hibari</span>
+          <div class="kana">ツブヤケル</div>
+          <div class="imi">Xでつぶやける子</div>
+          <span class="call mono">tsubuyakeru</span>
         </div>
       </div>
       <div class="role-band">X投稿担当</div>
@@ -228,31 +205,26 @@
           <dt>出力先</dt><dd><code>output/x/</code></dd>
         </dl>
         <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
-        <div class="prompt"><span class="lbl">呼び出し例</span>ひばり、閉店した居酒屋の厨房機器買取をテーマに4案ちょうだい</div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>ツブヤケル、閉店した居酒屋の厨房機器買取をテーマに4案ちょうだい</div>
       </div>
     </section>
 
-    <!-- あきな -->
-    <section class="card" style="--c:var(--akina)">
+    <!-- アポトレル -->
+    <section class="card" style="--c:var(--apo)">
       <div class="card-head">
-        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="あきなのアバター">
-          <circle cx="60" cy="58" r="30" fill="#7a5230"/>
-          <path d="M84 52q14 4 12 24-3 14-12 20 5-12 3-24-1-12-3-20z" fill="#7a5230"/>
-          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
-          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#7a5230"/>
-          <circle cx="88" cy="50" r="4.5" fill="#C07A18"/>
-          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
-          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
-          <path d="M54 76q6 4 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <rect x="22" y="92" width="18" height="13" rx="2" fill="none" stroke="#C07A18" stroke-width="2.2"/>
-          <path d="M22 94l9 6 9-6" fill="none" stroke="#C07A18" stroke-width="2.2"/>
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="アポトレルのアイコン">
+          <rect x="22" y="38" width="52" height="38" rx="4" fill="var(--card)" stroke="var(--apo)" stroke-width="3"/>
+          <path d="M24 42l24 18 24-18" fill="none" stroke="var(--apo)" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="66" y="62" width="34" height="32" rx="4" fill="var(--card)" stroke="var(--apo)" stroke-width="3"/>
+          <line x1="66" y1="72" x2="100" y2="72" stroke="var(--apo)" stroke-width="3"/>
+          <line x1="75" y1="58" x2="75" y2="66" stroke="var(--apo)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="91" y1="58" x2="91" y2="66" stroke="var(--apo)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M76 82l5 5 9-9" fill="none" stroke="var(--apo)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg></div>
         <div class="who">
-          <div class="kana serif">あきな</div>
-          <div class="yurai">由来: <b>商い</b> — 押し付けない営業が信条</div>
-          <span class="call mono">akina</span>
+          <div class="kana">アポトレル</div>
+          <div class="imi">アポが取れるメールを書く子</div>
+          <span class="call mono">apo-toreru</span>
         </div>
       </div>
       <div class="role-band">B2B営業メール担当</div>
@@ -263,30 +235,24 @@
           <dt>出力先</dt><dd><code>output/outreach/</code></dd>
         </dl>
         <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
-        <div class="prompt"><span class="lbl">呼び出し例</span>あきな、各務原市の不動産管理会社向けに残置物撤去+買取相殺のコールドメールを</div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>アポトレル、各務原市の不動産管理会社向けに残置物撤去+買取相殺のコールドメールを</div>
       </div>
     </section>
 
-    <!-- みき -->
-    <section class="card" style="--c:var(--miki)">
+    <!-- サテイデキル -->
+    <section class="card" style="--c:var(--satei)">
       <div class="card-head">
-        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="みきのアバター">
-          <circle cx="60" cy="30" r="10" fill="#4c4060"/>
-          <circle cx="60" cy="58" r="30" fill="#4c4060"/>
-          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
-          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#4c4060"/>
-          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
-          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
-          <path d="M55 76q5 3 10 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <circle cx="90" cy="92" r="9" fill="none" stroke="#6B5AA8" stroke-width="2.6"/>
-          <line x1="96.5" y1="98.5" x2="104" y2="106" stroke="#6B5AA8" stroke-width="3" stroke-linecap="round"/>
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="サテイデキルのアイコン">
+          <path d="M30 34h26l22 22-26 26-22-22z" fill="var(--card)" stroke="var(--satei)" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="42" cy="46" r="4" fill="var(--satei)"/>
+          <text x="47" y="70" font-size="16" font-weight="bold" fill="var(--satei)" transform="rotate(-45 47 70)">¥</text>
+          <circle cx="78" cy="76" r="14" fill="none" stroke="var(--satei)" stroke-width="3.4"/>
+          <line x1="88" y1="86" x2="100" y2="98" stroke="var(--satei)" stroke-width="4.4" stroke-linecap="round"/>
         </svg></div>
         <div class="who">
-          <div class="kana serif">みき</div>
-          <div class="yurai">由来: <b>目利き</b> — 根拠のない数字は書かない</div>
-          <span class="call mono">miki</span>
+          <div class="kana">サテイデキル</div>
+          <div class="imi">型番から査定できる子</div>
+          <span class="call mono">satei-dekiru</span>
         </div>
       </div>
       <div class="role-band">買取査定サポート担当</div>
@@ -297,31 +263,22 @@
           <dt>出力先</dt><dd><code>output/valuation/</code></dd>
         </dl>
         <div class="tools"><span class="tool">Read</span><span class="tool">Write</span><span class="tool">WebSearch</span><span class="tool">WebFetch</span></div>
-        <div class="prompt"><span class="lbl">呼び出し例</span>みき、ホシザキ HR-120A3 と大和冷機 301CD-EC の査定メモを作って。通電確認済み</div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>サテイデキル、ホシザキ HR-120A3 と大和冷機 301CD-EC の査定メモを作って。通電確認済み</div>
       </div>
     </section>
 
-    <!-- こころ -->
-    <section class="card" style="--c:var(--kokoro)">
+    <!-- ヘンジカケル -->
+    <section class="card" style="--c:var(--henji)">
       <div class="card-head">
-        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="こころのアバター">
-          <circle cx="60" cy="58" r="30" fill="#9c6a58"/>
-          <rect x="28" y="56" width="14" height="46" rx="7" fill="#9c6a58"/>
-          <rect x="78" y="56" width="14" height="46" rx="7" fill="#9c6a58"/>
-          <circle cx="60" cy="64" r="26" fill="var(--skin)"/>
-          <path d="M32 62a28 28 0 0 1 56 0c-8-6-16-9-28-9s-20 3-28 9z" fill="#9c6a58"/>
-          <circle cx="50" cy="66" r="2.6" fill="#2A3238"/>
-          <circle cx="70" cy="66" r="2.6" fill="#2A3238"/>
-          <path d="M54 76q6 5 12 0" fill="none" stroke="#b5766a" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="42" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <ellipse cx="78" cy="72" rx="3.4" ry="2" fill="var(--blush)" opacity=".55"/>
-          <path d="M78 44a3.4 3.4 0 0 1 5 0 3.4 3.4 0 0 1 5 0q2 2.4-5 7.4-7-5-5-7.4z" fill="#D9708A"/>
-          <path d="M22 90a4.6 4.6 0 0 1 7 0 4.6 4.6 0 0 1 7 0q2.6 3.4-7 10-9.6-6.6-7-10z" fill="#D9708A"/>
+        <div class="avatar"><svg viewBox="0 0 120 120" role="img" aria-label="ヘンジカケルのアイコン">
+          <rect x="34" y="44" width="56" height="40" rx="4" fill="var(--card)" stroke="var(--henji)" stroke-width="3"/>
+          <path d="M36 48l26 19 26-19" fill="none" stroke="var(--henji)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M40 30q-14 1-18 12 6-4 14-4v8l16-12-16-12z" fill="var(--henji)"/>
         </svg></div>
         <div class="who">
-          <div class="kana serif">こころ</div>
-          <div class="yurai">由来: <b>心</b> — 心配りの接客文</div>
-          <span class="call mono">kokoro</span>
+          <div class="kana">ヘンジカケル</div>
+          <div class="imi">お客様に返事が書ける子</div>
+          <span class="call mono">henji-kakeru</span>
         </div>
       </div>
       <div class="role-band">お客様返信担当（toC）</div>
@@ -332,7 +289,7 @@
           <dt>出力先</dt><dd><code>output/reply/</code></dd>
         </dl>
         <div class="tools"><span class="tool">Read</span><span class="tool">Write</span></div>
-        <div class="prompt"><span class="lbl">呼び出し例</span>こころ、この問い合わせに返信を作って（受信メール本文を貼り付け）</div>
+        <div class="prompt"><span class="lbl">呼び出し例</span>ヘンジカケル、この問い合わせに返信を作って（受信メール本文を貼り付け）</div>
       </div>
     </section>
 
@@ -341,7 +298,7 @@
   <div class="board">
     <h2 class="serif">みんなのお約束（掲示板）</h2>
     <ul class="rules">
-      <li>キャラ名は社内だけ。お客様・取引先への名乗りはいつも<b>「日比野」</b></li>
+      <li>エージェント名は社内だけ。お客様・取引先への名乗りはいつも<b>「日比野」</b></li>
       <li>成果物は全部<b>下書き</b>。勝手に送信・公開はしない</li>
       <li>金額は「目安」「現地確認のうえ」。誇大表現（No.1・最安値・必ず）は禁止</li>
       <li>対外文書には <b>0120-905-679</b> と対応エリア（愛知・岐阜・三重）を必ず明記</li>
@@ -350,7 +307,7 @@
     </ul>
     <div class="flow">
       <span class="step">依頼（名前で呼ぶ）</span><span class="arr">→</span>
-      <span class="step">担当の子が下書き作成</span><span class="arr">→</span>
+      <span class="step">担当が下書き作成</span><span class="arr">→</span>
       <span class="step">output/ に保存</span><span class="arr">→</span>
       <span class="step">日比野さんレビュー</span><span class="arr">→</span>
       <span class="step final">送信・公開</span>
