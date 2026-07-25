@@ -9,6 +9,9 @@ output/reply/live/
 output/certificates/
 stamp.png
 
+# 実在庫の仕入れ値・利益率等を含む出品文ドラフト（gitで管理しない）
+output/listings/
+
 # 生成物（必要ならコメントアウトして管理）
 output/research/*.md
 output/blog/*.md
