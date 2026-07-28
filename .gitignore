@@ -1,5 +1,4 @@
 # 実データ・実際のお客様の個人情報はコミットしない
-data/products.csv
 output/reply/live/
 
 # 実際の取引先情報・銀行口座等の機密運用情報（gitで管理しない）
@@ -11,9 +10,3 @@ stamp.png
 
 # 実在庫の仕入れ値・利益率等を含む出品文ドラフト（gitで管理しない）
 output/listings/
-
-# 生成物（必要ならコメントアウトして管理）
-output/research/*.md
-output/blog/*.md
-output/sns/*.md
-output/review/*.md
