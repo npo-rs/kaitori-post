@@ -1,8 +1,12 @@
-# 実データはコミットしない
-data/products.csv
+# 実データ・実際のお客様の個人情報はコミットしない
+output/reply/live/
 
-# 生成物（必要ならコメントアウトして管理）
-output/research/*.md
-output/blog/*.md
-output/sns/*.md
-output/review/*.md
+# 実際の取引先情報・銀行口座等の機密運用情報（gitで管理しない）
+.claude/agents/private/
+
+# 実際の故人名・生年月日を含む証明書PDF・印鑑画像（gitで管理しない）
+output/certificates/
+stamp.png
+
+# 実在庫の仕入れ値・利益率等を含む出品文ドラフト（gitで管理しない）
+output/listings/

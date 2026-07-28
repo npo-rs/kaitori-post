@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 要確認: 既存コラム（rs-nagoya.jp/zanchibutsu/column/ 配下）のヘッダー・フッター・CSS参照が
+     WebFetch経由で取得できなかったため（サイト側で403となり構造未確認）、汎用構造で作成しています。
+     アップロード前に既存コラムのheader/footer/cssパスに差し替えてください。 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夜逃げ残置物を大家が勝手に処分するのはNG｜正しい手順と費用相場</title>
+<meta name="description" content="夜逃げされた賃貸物件の残置物は、大家さんが勝手に処分すると法的トラブルになる恐れがあります。自力救済禁止の原則や正しい手順、費用相場を解説。愛知・岐阜・三重の残置物撤去はアールズ（0120-905-679）へご相談ください。">
+<meta name="robots" content="index,follow">
+<style>
+  :root{
+    --main-color:#1a6b5a;
+    --accent-color:#e08a2e;
+    --text-color:#2c2c2c;
+    --bg-light:#f7f6f2;
+    --border-color:#e2e0da;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+    color:var(--text-color);
+    line-height:1.8;
+    background:#fff;
+  }
+  a{color:var(--main-color);}
+  .site-header{
+    background:#fff;
+    border-bottom:3px solid var(--main-color);
+    padding:14px 20px;
+  }
+  .site-header .inner{
+    max-width:1000px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .site-header .logo{
+    font-size:20px;
+    font-weight:bold;
+    color:var(--main-color);
+    text-decoration:none;
+  }
+  .site-header .logo span{
+    display:block;
+    font-size:12px;
+    font-weight:normal;
+    color:#666;
+  }
+  .site-header nav ul{
+    list-style:none;
+    display:flex;
+    gap:18px;
+    margin:8px 0 0;
+    padding:0;
+    flex-wrap:wrap;
+  }
+  .site-header nav a{
+    font-size:14px;
+    text-decoration:none;
+    color:var(--text-color);
+  }
+  .header-tel{
+    background:var(--accent-color);
+    color:#fff;
+    padding:8px 16px;
+    border-radius:6px;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .breadcrumb{
+    max-width:1000px;
+    margin:12px auto 0;
+    padding:0 20px;
+    font-size:13px;
+    color:#777;
+  }
+  .breadcrumb a{color:#777;}
+  main{
+    max-width:1000px;
+    margin:0 auto;
+    padding:20px;
+  }
+  article h1{
+    font-size:26px;
+    line-height:1.5;
+    color:var(--main-color);
+    border-left:6px solid var(--main-color);
+    padding-left:14px;
+    margin:24px 0 8px;
+  }
+  .lead{
+    background:var(--bg-light);
+    padding:16px 18px;
+    border-radius:8px;
+    font-size:15px;
+    margin-bottom:28px;
+  }
+  .meta-info{
+    font-size:13px;
+    color:#888;
+    margin-bottom:20px;
+  }
+  article h2{
+    font-size:21px;
+    color:#fff;
+    background:var(--main-color);
+    padding:10px 16px;
+    border-radius:4px;
+    margin-top:44px;
+  }
+  article h3{
+    font-size:17px;
+    color:var(--main-color);
+    border-bottom:2px solid var(--border-color);
+    padding-bottom:6px;
+    margin-top:30px;
+  }
+  article p{
+    margin:14px 0;
+    font-size:15.5px;
+  }
+  article ul, article ol{
+    padding-left:22px;
+  }
+  article li{
+    margin:8px 0;
+    font-size:15.5px;
+  }
+  .step{
+    background:var(--bg-light);
+    border-radius:8px;
+    padding:14px 18px;
+    margin:14px 0;
+  }
+  .step-num{
+    display:inline-block;
+    background:var(--main-color);
+    color:#fff;
+    border-radius:50%;
+    width:26px;
+    height:26px;
+    text-align:center;
+    line-height:26px;
+    font-size:13px;
+    margin-right:8px;
+  }
+  table.cost-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:16px 0;
+    font-size:14.5px;
+  }
+  table.cost-table th, table.cost-table td{
+    border:1px solid var(--border-color);
+    padding:10px;
+    text-align:left;
+  }
+  table.cost-table th{
+    background:var(--bg-light);
+  }
+  .note-box{
+    border:1px solid var(--accent-color);
+    background:#fff9f0;
+    border-radius:8px;
+    padding:14px 18px;
+    font-size:14px;
+    margin:20px 0;
+  }
+  .note-box strong{color:var(--accent-color);}
+  .law-note{
+    border:1px dashed #999;
+    background:#fafafa;
+    border-radius:8px;
+    padding:14px 18px;
+    font-size:13.5px;
+    color:#555;
+    margin:20px 0;
+  }
+  .internal-links{
+    background:var(--bg-light);
+    border-radius:8px;
+    padding:16px 18px;
+    margin:24px 0;
+  }
+  .internal-links h3{border:none;margin-top:0;}
+  .internal-links ul{padding-left:20px;}
+  .cta-box{
+    background:var(--main-color);
+    color:#fff;
+    border-radius:10px;
+    padding:26px 24px;
+    margin:40px 0 20px;
+    text-align:center;
+  }
+  .cta-box h2{
+    background:none;
+    color:#fff;
+    padding:0;
+    margin:0 0 10px;
+    font-size:22px;
+  }
+  .cta-box p{color:#f0f0f0;}
+  .cta-tel{
+    display:inline-block;
+    background:#fff;
+    color:var(--main-color);
+    font-size:26px;
+    font-weight:bold;
+    text-decoration:none;
+    padding:10px 24px;
+    border-radius:8px;
+    margin:12px 0;
+  }
+  .cta-tel span{
+    display:block;
+    font-size:12px;
+    font-weight:normal;
+  }
+  .cta-area{
+    font-size:14px;
+    margin-top:6px;
+  }
+  .site-footer{
+    background:#222;
+    color:#ccc;
+    margin-top:50px;
+    padding:30px 20px 20px;
+    font-size:13px;
+  }
+  .site-footer .inner{
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .site-footer a{color:#ccc;}
+  .site-footer ul{
+    list-style:none;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .site-footer .copyright{
+    color:#888;
+    font-size:12px;
+    border-top:1px solid #444;
+    padding-top:14px;
+  }
+  @media (max-width:600px){
+    article h1{font-size:21px;}
+    article h2{font-size:18px;}
+    .cta-tel{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="https://rs-nagoya.jp/zanchibutsu/" class="logo">残置物撤去なら株式会社アールズ
+      <span>愛知・岐阜・三重対応／古物商許可 第541032103400号</span>
+    </a>
+    <a href="tel:0120905679" class="header-tel">無料相談 0120-905-679</a>
+  </div>
+  <nav>
+    <div class="inner" style="display:block;">
+      <ul>
+        <li><a href="https://rs-nagoya.jp/zanchibutsu/">残置物撤去TOP</a></li>
+        <li><a href="https://rs-nagoya.jp/zanchibutsu/column/">コラム一覧</a></li>
+        <li><a href="https://rs-nagoya.jp/">アールズ本体サイト</a></li>
+        <li><a href="https://rs-chubo-kaitori.net/">厨房機器買取</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<p class="breadcrumb">
+  <a href="https://rs-nagoya.jp/">TOP</a> &gt;
+  <a href="https://rs-nagoya.jp/zanchibutsu/">残置物撤去</a> &gt;
+  <a href="https://rs-nagoya.jp/zanchibutsu/column/">コラム</a> &gt;
+  夜逃げ残置物の処分と費用相場
+</p>
+
+<main>
+<article>
+  <h1>夜逃げされた物件の残置物、大家さんが勝手に処分してはいけない理由と正しい手順・費用相場</h1>
+
+  <p class="meta-info">公開日：2026年7月24日</p>
+
+  <div class="lead">
+    <p>入居者が家賃を滞納したまま突然姿を消す「夜逃げ」。部屋には家具や家電、生活用品がそのまま残されているケースが多く、大家さんや管理会社としては「早く片付けて次の入居者を入れたい」と考えるのが本音だと思います。ただし、残された残置物を大家さんの判断だけで勝手に処分すると、法律上のトラブルに発展するおそれがあります。この記事では、なぜ勝手に処分してはいけないのか、正しい対応の流れ、処分にかかる費用の目安について解説します。</p>
+  </div>
+
+  <h2>夜逃げ後の残置物、大家さんが勝手に処分してはいけない理由</h2>
+
+  <h3>残置物の所有権は、行方不明でも入居者本人に残る</h3>
+  <p>夜逃げによって入居者と連絡が取れなくなったとしても、部屋に残された家具や家電、衣類などの所有権は、原則としてその入居者（借主）にあります。連絡が取れない・行方が分からないという事実だけでは、所有権が大家さん側に移るわけではありません。</p>
+
+  <h3>「自力救済禁止の原則」とは</h3>
+  <p>日本の法律では、権利を侵害された側であっても、裁判所などの法的手続きを経ずに実力行使で権利を回復すること（自力救済）は、原則として認められていません。これを「自力救済禁止の原則」といいます。家賃滞納や無断退去があったとしても、大家さんが独断で鍵を交換したり、室内の家財を運び出して処分したりする行為は、この原則に反すると考えられています。</p>
+
+  <h3>無断で処分した場合に問われうる法的リスク</h3>
+  <p>残置物を大家さんの判断だけで処分した場合、民事上は不法行為として損害賠償を請求されるリスクがあります。裁判例の中には、無断で搬出・廃棄した残置物の中に写真アルバムなど本人にとって思い出の品が含まれていたことを理由に、慰謝料の支払いが認められたケースも報告されています。さらに、状況によっては刑法235条の窃盗罪に問われる可能性が指摘される場合もあります。</p>
+  <div class="law-note">
+    <strong>【法律に関する注記】</strong> 本記事の法律・手続きに関する説明は、一般的な情報提供を目的としたものであり、個別の事案における法的な判断・対応方法については、弁護士など専門家にご相談ください。
+  </div>
+
+  <h2>残置物処分までの正しい手順</h2>
+  <p>夜逃げによって借主と連絡が取れなくなった場合、残置物を処分するまでには法的な手続きを踏む必要があります。一般的な流れは次のとおりです。</p>
+
+  <div class="step"><span class="step-num">1</span><strong>借主への連絡・契約解除の通知</strong><br>
+  電話や書面で連絡を試み、応答がない場合は内容証明郵便で契約解除の意思表示を行います。この時点では、まだ室内には立ち入らず残置物にも手をつけないのが原則です。</div>
+
+  <div class="step"><span class="step-num">2</span><strong>行方不明の場合は「公示送達」を利用した明渡訴訟</strong><br>
+  借主の住民票や勤務先などを調査しても所在が分からない場合は、裁判所の「公示送達」という制度を利用して、建物明渡請求訴訟を提起することができます。</div>
+
+  <div class="step"><span class="step-num">3</span><strong>判決確定後の強制執行（動産執行）</strong><br>
+  勝訴判決が確定したら、裁判所に強制執行を申し立てます。執行官の立会いのもとで残置物の搬出が行われ、この手続きを経て初めて室内を明け渡された状態にできます。</div>
+
+  <div class="step"><span class="step-num">4</span><strong>保管期間を経ての処分</strong><br>
+  搬出した残置物は、大家さんの責任で一定期間保管する必要があるとされています。保管期間の目安や具体的な処分の可否については、事案ごとに判断が異なるため専門家に確認しながら進めるのが安心です。</div>
+
+  <p>なお、あらかじめ賃貸借契約書に残置物の取り扱いに関する条項を盛り込んでおくことで、いざという時の対応がスムーズになる場合もあります。契約条項の設計についても、内容によって法的な有効性が異なるため、弁護士など専門家に相談のうえ整備することをおすすめします。</p>
+
+  <h2>気になる費用相場</h2>
+  <p>夜逃げ物件の対応でかかる費用は、大きく分けて「法的手続きにかかる費用」と「残置物の搬出・処分にかかる費用」の2種類があります。以下はあくまで一般的な目安であり、実際の金額は物件の状況や依頼先、地域によって変動します。現地確認のうえでのお見積りが基本となります。</p>
+
+  <h3>明渡訴訟・強制執行にかかる費用の目安</h3>
+  <table class="cost-table">
+    <tr><th>項目</th><th>費用の目安</th></tr>
+    <tr><td>裁判所への予納金（執行官費用など）</td><td>6万円程度〜</td></tr>
+    <tr><td>執行補助者（搬出・廃棄業者）費用</td><td>一般的なアパートで30万〜40万円程度</td></tr>
+    <tr><td>弁護士費用（相談・着手金・報酬など）</td><td>個別見積もり（事務所により異なる）</td></tr>
+  </table>
+  <p>物件の広さや残置物の量によっては、全体で50万円〜100万円程度を見込んでおくケースもあるとされています。金額の幅が大きいため、弁護士や専門業者に早めに相談し、見積もりを確認することが大切です。</p>
+
+  <h3>残置物の搬出・処分にかかる費用の目安</h3>
+  <table class="cost-table">
+    <tr><th>間取り</th><th>費用の目安</th></tr>
+    <tr><td>1R・1K</td><td>3万円〜8万円程度</td></tr>
+    <tr><td>1LDK</td><td>5万円〜10万円程度</td></tr>
+    <tr><td>3LDK</td><td>15万円〜50万円程度</td></tr>
+    <tr><td>一戸建て一棟まるごと</td><td>20万円〜60万円程度</td></tr>
+  </table>
+  <div class="note-box">
+    <strong>費用に関する注記：</strong> 上記はあくまで目安です。実際の費用は残置物の量・種類、建物の階数やエレベーターの有無、搬出経路、処分品目（家電リサイクル対象品・産業廃棄物該当品の有無）などにより変動します。正式な金額は現地確認のうえでお見積りいたします。
+  </div>
+
+  <h2>大家さん・管理会社ができる対応とアールズのサポート</h2>
+  <p>夜逃げが発生してしまった場合、まずは弁護士など専門家に相談し、法的な手続きの見通しを立てることが第一歩です。そのうえで、強制執行や任意の合意が整った段階での残置物の搬出・処分については、株式会社アールズのような専門業者にご相談いただくことで、搬出から廃棄、必要に応じたリサイクル品の買取まで一括して対応できます。</p>
+  <p>特に、対象物件が飲食店だった場合など厨房機器が残されているケースでは、状態によって買取が可能なこともあります。厨房機器の買取については、姉妹サイトの<a href="https://rs-chubo-kaitori.net/" target="_blank" rel="noopener">厨房機器買取専門サイト</a>もあわせてご覧ください。また、故人が住んでいた部屋の残置物整理については<a href="https://rs-nagoya.jp/">遺品整理サービス</a>もご案内可能です。</p>
+
+  <div class="internal-links">
+    <h3>あわせて読みたい・関連ページ</h3>
+    <ul>
+      <li><a href="https://rs-nagoya.jp/zanchibutsu/">残置物撤去サービスの詳細はこちら（対応エリア・料金の考え方）</a></li>
+      <li><a href="https://rs-nagoya.jp/zanchibutsu/column/">残置物撤去コラム一覧</a></li>
+      <li><a href="https://rs-nagoya.jp/">株式会社アールズ 本体サイト（出張買取・不用品回収）</a></li>
+      <li><a href="https://rs-chubo-kaitori.net/">厨房機器買取専門サイト（rs-chubo-kaitori.net）</a></li>
+    </ul>
+  </div>
+
+  <h2>まとめ</h2>
+  <p>夜逃げによって残された残置物は、たとえ入居者と連絡が取れなくなっていても所有権は借主にあり、大家さんが独断で処分することは自力救済禁止の原則に反するおそれがあります。内容証明郵便での通知、行方不明時の公示送達、明渡訴訟、強制執行という法的な手順を踏むことが基本となり、費用についても法的手続き分・搬出処分分それぞれに目安があります。まずは弁護士に相談して手続きの見通しを立て、実際の搬出・処分の段階になりましたら、愛知・岐阜・三重エリア対応の株式会社アールズまでお気軽にご相談ください。</p>
+
+</article>
+
+<div class="cta-box">
+  <h2>残置物の搬出・処分は株式会社アールズにご相談ください</h2>
+  <p>無料お見積り・現地調査を行っております。法的手続きが完了した後の残置物撤去はもちろん、内容についてのご相談もお気軽にどうぞ。</p>
+  <a href="tel:0120905679" class="cta-tel">0120-905-679<span>受付時間はお電話にてご案内</span></a>
+  <p class="cta-area">対応エリア：愛知県・岐阜県・三重県（岐阜県は各務原市・岐阜市を重点エリアとして対応）</p>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <ul>
+      <li><a href="https://rs-nagoya.jp/">アールズ本体サイト</a></li>
+      <li><a href="https://rs-nagoya.jp/zanchibutsu/">残置物撤去</a></li>
+      <li><a href="https://rs-chubo-kaitori.net/">厨房機器買取</a></li>
+      <li><a href="https://rs-nagoya.jp/faq/">よくある質問</a></li>
+    </ul>
+    <p>株式会社アールズ／〒462-0012 愛知県名古屋市北区楠4-312-2／古物商許可 第541032103400号<br>
+    対応エリア：愛知・岐阜（各務原市・岐阜市重点）・三重／フリーダイヤル 0120-905-679</p>
+    <p class="copyright">&copy; 2026 R's Co., Ltd.</p>
+  </div>
+</footer>
+
+</body>
+</html>
