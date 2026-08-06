@@ -1,0 +1,19 @@
+name = "line-relay"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# `wrangler kv namespace create PENDING_QUOTES` の出力IDに置き換えてください
+kv_namespaces = [
+  { binding = "PENDING_QUOTES", id = "REPLACE_WITH_KV_NAMESPACE_ID" }
+]
+
+# シークレットは wrangler secret put で登録する（このファイルには書かない）:
+#   LINE_CHANNEL_ACCESS_TOKEN
+#   LINE_CHANNEL_SECRET
+#
+# 通常の変数はここに追記するか、初回は空のまま起動してBotからのID通知で埋めていく:
+[vars]
+# MOTOUKE_GROUP_ID = "元請グループのID"
+# GAICHU_USER_ID = "外注のユーザーID"
+# ADMIN_USER_ID = "管理者(あなた)のユーザーID"
+# MARKUP_RATE = "1.2"
