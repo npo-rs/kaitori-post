@@ -7,3 +7,4 @@ output/blog/*.md
 output/sns/*.md
 output/review/*.md
 output/estimate/*.md
+output/estimate/*.pdf
